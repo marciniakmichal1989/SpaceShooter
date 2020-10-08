@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{fed75267-e463-5f47-2082-7005df7313ca}</ProjectGuid>
+    <ProjectGuid>{709d30a1-f5b6-cf52-f13a-a13d5a30ed55}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -232,53 +232,53 @@
     <Reference Include="UnityEditor.WebGL.Extensions">
         <HintPath>C:/Unity/2019.4.11f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Ludiq.Graphs.Editor">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Assets/Ludiq/Assemblies/Ludiq.Graphs.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Ludiq.Core.Runtime">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Assets/Ludiq/Assemblies/Ludiq.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Ludiq.Graphs.Runtime">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Assets/Ludiq/Assemblies/Ludiq.Graphs.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Antlr3.Runtime">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Assets/Ludiq/Assemblies/Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Bolt.Core.Runtime">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Assets/Ludiq/Assemblies/Bolt.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Bolt.Flow.Runtime">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Assets/Ludiq/Assemblies/Bolt.Flow.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="MiscUtil">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Assets/Ludiq/Assemblies/MiscUtil.dll</HintPath>
-    </Reference>
-    <Reference Include="Ludiq.Platforms">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Assets/Ludiq/Assemblies/Ludiq.Platforms.dll</HintPath>
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Assets/Ludiq/Assemblies/Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.Core.Editor">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Assets/Ludiq/Assemblies/Bolt.Core.Editor.dll</HintPath>
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Assets/Ludiq/Assemblies/Bolt.Core.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Ionic.Zip">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Assets/Ludiq/Assemblies/Ionic.Zip.dll</HintPath>
-    </Reference>
-    <Reference Include="YamlDotNet">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Assets/Ludiq/Assemblies/YamlDotNet.dll</HintPath>
-    </Reference>
-    <Reference Include="Ludiq.Core.Editor">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Assets/Ludiq/Assemblies/Ludiq.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Bolt.State.Editor">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Assets/Ludiq/Assemblies/Bolt.State.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Bolt.State.Runtime">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Assets/Ludiq/Assemblies/Bolt.State.Runtime.dll</HintPath>
+    <Reference Include="Bolt.Core.Runtime">
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Assets/Ludiq/Assemblies/Bolt.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.Flow.Editor">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Assets/Ludiq/Assemblies/Bolt.Flow.Editor.dll</HintPath>
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Assets/Ludiq/Assemblies/Bolt.Flow.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Bolt.Flow.Runtime">
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Assets/Ludiq/Assemblies/Bolt.Flow.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Bolt.State.Editor">
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Assets/Ludiq/Assemblies/Bolt.State.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Bolt.State.Runtime">
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Assets/Ludiq/Assemblies/Bolt.State.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Assets/Ludiq/Assemblies/Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Ludiq.Core.Editor">
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Assets/Ludiq/Assemblies/Ludiq.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Ludiq.Core.Runtime">
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Assets/Ludiq/Assemblies/Ludiq.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Ludiq.Graphs.Editor">
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Assets/Ludiq/Assemblies/Ludiq.Graphs.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Ludiq.Graphs.Runtime">
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Assets/Ludiq/Assemblies/Ludiq.Graphs.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Ludiq.Platforms">
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Assets/Ludiq/Assemblies/Ludiq.Platforms.dll</HintPath>
+    </Reference>
+    <Reference Include="MiscUtil">
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Assets/Ludiq/Assemblies/MiscUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet">
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Assets/Ludiq/Assemblies/YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
         <HintPath>C:/Unity/2019.4.11f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -635,42 +635,42 @@
         <HintPath>C:/Unity/2019.4.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+        <HintPath>C:/Git/Unity/FirstGame/Space Shooter/SpaceShooter/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{07f3fc28-ebbc-00df-c466-08c29a16e02d}</Project>
+      <Project>{3c00ea31-f91c-46d9-a919-8ac5ed6be76a}</Project>
       <Name>Assembly-CSharp</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

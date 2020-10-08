@@ -15,6 +15,13 @@ public class Player : MonoBehaviour{
     [SerializeField]
     private int _lives = 3;
     private SpawnMenager _spawManager;
+    [SerializeField]
+    private bool isTripleShotActive = false;
+    [SerializeField]
+    private GameObject _trippleShot;
+    [SerializeField]
+    private float _trippleShotTurningOf = 0f;
+
 
     void Start(){
 
@@ -23,21 +30,22 @@ public class Player : MonoBehaviour{
     _spawManager = GameObject.Find("Spawn_Menager").GetComponent<SpawnMenager>();    
     while(_spawManager == null){
         Debug.LogError("SpawManager is null");
+        }
     }
 
-
-    }
-
+//////////////////////////////////////////////////////////////////
 
     void Update()
     {
         CalculateMovement();
 
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > _canFire){
-            FireLaser();
+            FireLaser();        
       }
                
     }
+
+//////////////////////////////////////////////////////////////////
 
     void CalculateMovement(){
 
@@ -56,17 +64,24 @@ public class Player : MonoBehaviour{
         else if(transform.position.y <= -3.8f){
             transform.position = new Vector3(transform.position.x,-3.8f,0);}
 
-        if (transform.position.x < -11.35f){
+        if (transform.position.x < -11.35f){    
             transform.position = new Vector3(11.19f,transform.position.y,0);
         }else if(transform.position.x >=11.20f){
             transform.position = new Vector3(-11.34f,transform.position.y,0);}
     }
 
+//////////////////////////////////////////////////////////////////
+
     void FireLaser(){
-            _canFire = _fireRate + Time.time;
+        _canFire = _fireRate + Time.time;
+            if (isTripleShotActive == true){
+            Instantiate(_trippleShot, transform.position + new Vector3(0,1.1f,0), Quaternion.identity);
+            }else{
             Instantiate(_laserPrefab, transform.position + new Vector3(0,1.1f,0), Quaternion.identity);
-                
+            };              
     }
+
+//////////////////////////////////////////////////////////////////
 
     public void Damage(){
 
@@ -76,6 +91,21 @@ public class Player : MonoBehaviour{
             _spawManager.OnPlayerDeath();
             Destroy(this.gameObject);
         }
+    }
+
+//////////////////////////////////////////////////////////////////
+
+    public void TripleShotActive(){
+        isTripleShotActive = true;
+        StartCoroutine(TripleShotPowerDownRutine());
+    }
+    
+//////////////////////////////////////////////////////////////////
+
+    IEnumerator TripleShotPowerDownRutine(){ 
+        yield return new WaitForSeconds(5f);
+        isTripleShotActive = false;     
 
     }
+
 }
