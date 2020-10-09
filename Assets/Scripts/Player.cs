@@ -15,13 +15,17 @@ public class Player : MonoBehaviour{
     [SerializeField]
     private int _lives = 3;
     private SpawnMenager _spawManager;
-    [SerializeField]
     private bool isTripleShotActive = false;
     [SerializeField]
     private GameObject _trippleShot;
     [SerializeField]
     private float _trippleShotTurningOf = 0f;
 
+    [SerializeField]
+    private float _speedMultiplier = 2f;
+    private bool _isSpeedBoostActive = false;
+
+//////////////////////////////////////////////////////////////////
 
     void Start(){
 
@@ -35,14 +39,12 @@ public class Player : MonoBehaviour{
 
 //////////////////////////////////////////////////////////////////
 
-    void Update()
-    {
+    void Update(){
         CalculateMovement();
 
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > _canFire){
-            FireLaser();        
-      }
-               
+            FireLaser();      
+        }        
     }
 
 //////////////////////////////////////////////////////////////////
@@ -55,9 +57,9 @@ public class Player : MonoBehaviour{
         float horizontalInput = Input.GetAxis("Horizontal"); 
 
         Vector3 direction = new Vector3(horizontalInput,vericalInput,0);
-        transform.Translate(direction * _speed * Time.deltaTime);   
-        
-        
+
+            transform.Translate(direction * _speed * Time.deltaTime);       
+              
         if (transform.position.y >= 0){
             transform.position = new Vector3(transform.position.x,0,0);
         }
@@ -75,9 +77,9 @@ public class Player : MonoBehaviour{
     void FireLaser(){
         _canFire = _fireRate + Time.time;
             if (isTripleShotActive == true){
-            Instantiate(_trippleShot, transform.position + new Vector3(0,1.1f,0), Quaternion.identity);
+                Instantiate(_trippleShot, transform.position + new Vector3(0,1.1f,0), Quaternion.identity);
             }else{
-            Instantiate(_laserPrefab, transform.position + new Vector3(0,1.1f,0), Quaternion.identity);
+                Instantiate(_laserPrefab, transform.position + new Vector3(0,1.1f,0), Quaternion.identity);
             };              
     }
 
@@ -107,5 +109,26 @@ public class Player : MonoBehaviour{
         isTripleShotActive = false;     
 
     }
+
+//////////////////////////////////////////////////////////////////
+
+
+    public void SpeedBoostActive(){
+        _isSpeedBoostActive = true;
+        _speed *= _speedMultiplier;
+        StartCoroutine(SpeedBoostRutine());
+    }
+
+//////////////////////////////////////////////////////////////////
+
+    IEnumerator SpeedBoostRutine(){ 
+        yield return new WaitForSeconds(5f); 
+        _isSpeedBoostActive = false;
+        _speed /= _speedMultiplier;
+        }
+
+////////////////////////////////////////////////////////////////// 
+
+    
 
 }
