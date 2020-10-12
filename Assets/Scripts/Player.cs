@@ -25,6 +25,12 @@ public class Player : MonoBehaviour{
     private float _speedMultiplier = 2f;
     private bool _isSpeedBoostActive = false;
 
+     private bool _isShieldActive = false;
+     private bool _ShieldVisulal = false;
+     [SerializeField]
+     private GameObject _shieldVisualizer;
+
+
 //////////////////////////////////////////////////////////////////
 
     void Start(){
@@ -87,12 +93,23 @@ public class Player : MonoBehaviour{
 
     public void Damage(){
 
+        if (_isShieldActive  == true){     
+        _isShieldActive = false;
+        _shieldVisualizer.SetActive(false);
+        return;
+        }
+
         _lives -= 1;
 
         if(_lives == 0){
-            _spawManager.OnPlayerDeath();
-            Destroy(this.gameObject);
+        _spawManager.OnPlayerDeath();
+        Destroy(this.gameObject);
+
         }
+
+        
+
+
     }
 
 //////////////////////////////////////////////////////////////////
@@ -129,6 +146,11 @@ public class Player : MonoBehaviour{
 
 ////////////////////////////////////////////////////////////////// 
 
-    
+    public void ShieldActive(){
+        _isShieldActive  = true;
+       
+       _shieldVisualizer.SetActive(true);
+
+    }
 
 }

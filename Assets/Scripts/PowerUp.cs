@@ -43,6 +43,7 @@ public class PowerUp : MonoBehaviour
                     Debug.Log("PowerUP speed collected");
                     break;
                 case 2:
+                    player.ShieldActive();
                     Debug.Log("PowerUp Shield Collected");
                     break;
                     }
