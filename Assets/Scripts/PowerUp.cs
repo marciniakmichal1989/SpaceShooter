@@ -36,15 +36,12 @@ public class PowerUp : MonoBehaviour
                 switch (PowerUpID){
                 case 0:
                     player.TripleShotActive();
-                    Debug.Log("PowerUP 3ple shoot collected");
                     break;
                 case 1:
                     player.SpeedBoostActive();
-                    Debug.Log("PowerUP speed collected");
                     break;
                 case 2:
                     player.ShieldActive();
-                    Debug.Log("PowerUp Shield Collected");
                     break;
                     }
             Destroy(this.gameObject);

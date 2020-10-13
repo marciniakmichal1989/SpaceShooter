@@ -30,6 +30,15 @@ public class Player : MonoBehaviour{
      [SerializeField]
      private GameObject _shieldVisualizer;
 
+    [SerializeField]
+     private int _score;
+
+     private UIMenager _uiMenager;
+
+
+
+    
+
 
 //////////////////////////////////////////////////////////////////
 
@@ -38,9 +47,16 @@ public class Player : MonoBehaviour{
     transform.position = new Vector3(0,-3,0);   
 
     _spawManager = GameObject.Find("Spawn_Menager").GetComponent<SpawnMenager>();    
+    _uiMenager = GameObject.Find("Canvas").GetComponent<UIMenager>();
+
     while(_spawManager == null){
         Debug.LogError("SpawManager is null");
         }
+
+    if (_uiMenager == null){
+        Debug.LogError("_uiMenager is null");
+    }
+    
     }
 
 //////////////////////////////////////////////////////////////////
@@ -49,8 +65,10 @@ public class Player : MonoBehaviour{
         CalculateMovement();
 
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > _canFire){
-            FireLaser();      
-        }        
+            FireLaser();  
+ 
+        }    
+  
     }
 
 //////////////////////////////////////////////////////////////////
@@ -101,15 +119,12 @@ public class Player : MonoBehaviour{
 
         _lives -= 1;
 
+        _uiMenager.UpdateLives(_lives);
+
         if(_lives == 0){
         _spawManager.OnPlayerDeath();
         Destroy(this.gameObject);
-
         }
-
-        
-
-
     }
 
 //////////////////////////////////////////////////////////////////
@@ -147,9 +162,16 @@ public class Player : MonoBehaviour{
 ////////////////////////////////////////////////////////////////// 
 
     public void ShieldActive(){
-        _isShieldActive  = true;
-       
+        _isShieldActive  = true;    
        _shieldVisualizer.SetActive(true);
+
+    }
+
+//////////////////////////////////////////////////////////////////
+
+    public void AddScore(int points){
+        _score += points;
+        _uiMenager.UpdateScore(_score);
 
     }
 
