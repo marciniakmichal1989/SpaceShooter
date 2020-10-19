@@ -26,7 +26,7 @@ public class Player : MonoBehaviour{
     private bool _isSpeedBoostActive = false;
 
      private bool _isShieldActive = false;
-     private bool _ShieldVisulal = false;
+     //private bool _ShieldVisulal = false;
      [SerializeField]
      private GameObject _shieldVisualizer;
 
@@ -34,6 +34,10 @@ public class Player : MonoBehaviour{
      private int _score;
 
      private UIMenager _uiMenager;
+
+     [SerializeField] GameObject _Right_Engine;
+     [SerializeField] GameObject _Left_Engine;
+
 
 
 
@@ -43,6 +47,9 @@ public class Player : MonoBehaviour{
 //////////////////////////////////////////////////////////////////
 
     void Start(){
+
+        _Right_Engine.SetActive(false);
+        _Left_Engine.SetActive(false);
 
     transform.position = new Vector3(0,-3,0);   
 
@@ -118,6 +125,12 @@ public class Player : MonoBehaviour{
         }
 
         _lives -= 1;
+
+        if (_lives == 2){
+            _Right_Engine.SetActive(true);
+        }else if((_lives == 1)){
+            _Left_Engine.SetActive(true); 
+        }
 
         _uiMenager.UpdateLives(_lives);
 
