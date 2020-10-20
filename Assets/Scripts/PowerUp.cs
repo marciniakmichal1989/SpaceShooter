@@ -9,11 +9,16 @@ public class PowerUp : MonoBehaviour
     [SerializeField]
     private int PowerUpID;
 
+    [SerializeField] private AudioClip _clip;
+
+
+
 //////////////////////////////////////////////////////////////////
 
     void Start()
     {
         transform.position = new Vector3(Random.Range(-8,9),8,0);
+
     }
 
 //////////////////////////////////////////////////////////////////
@@ -31,6 +36,8 @@ public class PowerUp : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         if (other.tag == "Player"){
             Player player = other.transform.GetComponent<Player>();
+
+            AudioSource.PlayClipAtPoint(_clip, transform.position);
 
             if (player != null){
                 switch (PowerUpID){

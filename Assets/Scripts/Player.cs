@@ -4,41 +4,27 @@ using UnityEngine;
 
 
 public class Player : MonoBehaviour{
-    [SerializeField]
-    private float _speed = 3.5f;
-    [SerializeField]
-    private GameObject _laserPrefab;
-    [SerializeField]
-    private float _fireRate = 0.5f;
-    [SerializeField]
-    private float _canFire = -1;
-    [SerializeField]
-    private int _lives = 3;
+    [SerializeField] private float _speed = 3.5f;
+    [SerializeField] private GameObject _laserPrefab;
+    [SerializeField] private float _fireRate = 0.5f;
+    [SerializeField] private float _canFire = -1;
+    [SerializeField] private int _lives = 3;
     private SpawnMenager _spawManager;
     private bool isTripleShotActive = false;
-    [SerializeField]
-    private GameObject _trippleShot;
-    [SerializeField]
-    private float _trippleShotTurningOf = 0f;
-
-    [SerializeField]
-    private float _speedMultiplier = 2f;
+    [SerializeField] private GameObject _trippleShot;
+    [SerializeField] private float _trippleShotTurningOf = 0f;
+    [SerializeField] private float _speedMultiplier = 2f;
     private bool _isSpeedBoostActive = false;
-
-     private bool _isShieldActive = false;
-     //private bool _ShieldVisulal = false;
-     [SerializeField]
-     private GameObject _shieldVisualizer;
-
-    [SerializeField]
-     private int _score;
-
-     private UIMenager _uiMenager;
-
-     [SerializeField] GameObject _Right_Engine;
-     [SerializeField] GameObject _Left_Engine;
+    private bool _isShieldActive = false;
+    [SerializeField] private GameObject _shieldVisualizer;
+    [SerializeField] private int _score;
+    private UIMenager _uiMenager;
+    [SerializeField] GameObject _Right_Engine;
+    [SerializeField] GameObject _Left_Engine;
 
 
+    [SerializeField] private AudioClip _laserSoundClip;
+    [SerializeField] private AudioSource _audioSorce;
 
 
     
@@ -48,22 +34,29 @@ public class Player : MonoBehaviour{
 
     void Start(){
 
-        _Right_Engine.SetActive(false);
-        _Left_Engine.SetActive(false);
+
 
     transform.position = new Vector3(0,-3,0);   
-
     _spawManager = GameObject.Find("Spawn_Menager").GetComponent<SpawnMenager>();    
     _uiMenager = GameObject.Find("Canvas").GetComponent<UIMenager>();
+    
 
     while(_spawManager == null){
         Debug.LogError("SpawManager is null");
         }
 
+
     if (_uiMenager == null){
         Debug.LogError("_uiMenager is null");
     }
     
+    
+    if (_audioSorce == null){
+        Debug.LogError("Audio Sorce on player is Null");
+    }else{
+        _audioSorce.clip = _laserSoundClip;
+        }
+        
     }
 
 //////////////////////////////////////////////////////////////////
@@ -111,7 +104,8 @@ public class Player : MonoBehaviour{
                 Instantiate(_trippleShot, transform.position + new Vector3(0,1.1f,0), Quaternion.identity);
             }else{
                 Instantiate(_laserPrefab, transform.position + new Vector3(0,1.1f,0), Quaternion.identity);
-            };              
+            };
+            _audioSorce.Play();          
     }
 
 //////////////////////////////////////////////////////////////////
